@@ -33,8 +33,8 @@ class HomepageController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            $response = $this->forward('App\Controller\ShowpageController::index', [
-                $data => $data,
+            $response = $this->redirectToRoute('app_showpage', [
+                $data,
             ]);
             return $response;
         }

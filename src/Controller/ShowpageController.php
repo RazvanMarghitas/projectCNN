@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ShowpageController extends AbstractController
 {
     /**
-     * @Route("/showpage")
+     * @Route("/showpage", name="app_showpage")
      *
      * @param $data
      * @return \Symfony\Component\HttpFoundation\Response
