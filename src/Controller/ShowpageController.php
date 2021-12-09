@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -16,8 +17,9 @@ class ShowpageController extends AbstractController
      * @param $data
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index($data)
+    public function index(Request $request)
     {
+        $data = $request->query->get('data');
         if ($data == 'status') {
 
             sleep(10);
@@ -47,7 +49,7 @@ class ShowpageController extends AbstractController
 
     public function fileputcontent(?string $string)
     {
-        $f = fopen('/var/command.txt','w');
+        $f = fopen('../src/Controller/files/command.txt','w');
         fwrite($f, $string);
         fclose($f);
     }

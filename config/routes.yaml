@@ -3,6 +3,6 @@ fos_user:
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-app_showpage:
+showpage:
     path: /showpage
     controller: App\Controller\ShowpageController::index
